@@ -44,3 +44,6 @@ Which are already computed and available here :DSM, DTM
 ## Deliverables
 
 Publish your source code on the GitHub repository.
+
+
+## Pending things to do
