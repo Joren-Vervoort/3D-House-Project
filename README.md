@@ -72,7 +72,7 @@ and unpack ONLY the .tif file inside the GEOTiff folder to a created folder call
 
 ## How does it work
 
-
+This will be added.
 
 ## Results
 
@@ -85,3 +85,4 @@ Examples of 3D plotted houses can be found in the folder called "Results"
 - Make the project more general and user friendly
 - Add the "Nice-to-have features"
 - Add a small boarder around the x-axis and y-axis so all walls are included (sometimes walls are excluded at the boundary points of the polygon)
+- Add 'How does it work' to create more clarity to users
