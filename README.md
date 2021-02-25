@@ -46,7 +46,7 @@ Which are already computed and available here :DSM, DTM
 
 ## Before using this code
 
-1. Create a virtual environment with python 3.7 (with its own kernel) and download the following libraries:
+1.Create a virtual environment with python 3.7 (with its own kernel) and download the following libraries:
 
 - requests
 - json
@@ -54,11 +54,11 @@ Which are already computed and available here :DSM, DTM
 - rioxarray
 - plotly
 
-2. Create a directory to work in.
+2.Create a directory to work in.
 
 note: the following data to download is quite extensive. DO NOT CHANGE THE NAMES OF THE FILES.
 
-3. Download the DSM .zip files from this website: http://www.geopunt.be/download?container=dhm-vlaanderen-ii-dsm-raster-1m&title=Digitaal%20Hoogtemodel%20Vlaanderen%20II,%20DSM,%20raster,%201m
+3.Download the DSM .zip files from this website: http://www.geopunt.be/download?container=dhm-vlaanderen-ii-dsm-raster-1m&title=Digitaal%20Hoogtemodel%20Vlaanderen%20II,%20DSM,%20raster,%201m
 and unpack ONLY the .tif file inside the GEOTiff folder to a created folder called DSM.
 
 4.Download the DTM .zip files from this website: http://www.geopunt.be/download?container=dhm-vlaanderen-ii-dtm-raster-1m&title=Digitaal%20Hoogtemodel%20Vlaanderen%20II,%20DTM,%20raster,%201m
