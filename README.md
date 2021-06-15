@@ -1,6 +1,6 @@
 <h1 align="center"> <strong>3D House Project</strong> </h1>
 
-| ![](Results/3D-house_example_1.png) |
+| ![](Results/3D-house-example-1.png) |
 |:-:|
 | Result example |
 
