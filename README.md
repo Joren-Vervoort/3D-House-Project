@@ -1,4 +1,8 @@
-# 3D House Project
+<h1 align="center"> <strong>3D House Project</strong> </h1>
+
+| ![](images/CHM_example.jpg) |
+|:-:|
+| CHM = DSM - DTM |
 
 - Repository: 3D-House-Project
 - Type of Challenge: Learning & Consolidation
