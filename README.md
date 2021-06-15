@@ -1,8 +1,8 @@
 <h1 align="center"> <strong>3D House Project</strong> </h1>
 
-| ![](Images/CHM_example.png) |
+| ![](Results/3D-house-example-1.png) |
 |:-:|
-| CHM = DSM - DTM |
+| Result example |
 
 - Repository: 3D-House-Project
 - Type of Challenge: Learning & Consolidation
@@ -11,10 +11,24 @@
 - Deployment strategy : Github page | Powerpoint | Jupyter Notebook | Webpage | App
 - Team challenge : solo
 
-## Mission Objectives
+---
+
+## **Table of Contents**
+Your section headers will be used to reference the location of the destination.
+
+- [Description](#description)
+- [How To Use](#how-to-use)
+- [Repo Artitecture](#repo-artitecture)
+- [Next Step](#next-step)
+- [License](#license)
+- [Author Info](#author-info)
+
+## **Description**
+
+### *Mission Objectives*
 3D plot a user-given address (located within Belgium) and plot the house/building that is associated with this address.
 
-## Learning Objectives
+### *Learning Objectives*
 
 to be able to search and implement new librairies
 to be able to read and use shapefiles
@@ -22,9 +36,28 @@ to be able to read and use geoTIFFs
 to be able to render a 3D plot
 to be able to present a final product
 
-## The Setting
+### *The Setting*
 
 We are LIDAR PLANES , active in the Geospatial industry. We would like to use our data to launch a new branch in the insurrance business. So, we need you to build a solution with our data to model a house in 3D with only a home address.
+
+<br/>
+
+### **Technologies**
+<br/>
+
+| Library          | Used to                                        |
+| ---------------- | :----------------------------------------------|
+| Numpy            | To handle Numpy arrays                         |
+| Pandas           | To store and access info in a DataFrame        |
+| Matplotlib       | To plot the data                               |
+| request          | To make request to an API                      |
+| jupyter          | To open Jupyter Notebook                       |
+| plotly           | To plot in (interactive) 3D                    |
+| rasterio         | To open and handle LIDAR files                 |
+| rioxarray        | To convert LIDAR files into arrays             |
+
+[**↥ Back To The Top**](#table-of-contents)
+
 
 ### Must-have features
 
@@ -78,9 +111,17 @@ and unpack ONLY the .tif file inside the GEOTiff folder to a created folder call
 
 This will be added.
 
+| ![](Images/CHM_example.png) |
+|:-:|
+| CHM = DSM - DTM |
+
 ## Results
 
-Examples of 3D plotted houses can be found in the folder called "Results"
+These are examples of results of adresses in Belgium (the precise location will not be shared out of privacy).
+
+| ![](Results/3D-house-example-1.png)  | ![](Results/3D-house-example-2.png)  |
+|:-:|:-:|
+| Result example 1 | Result example 2 | 
 
 ## Pending things to do
 
