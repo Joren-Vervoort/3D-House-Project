@@ -1,6 +1,6 @@
 <h1 align="center"> <strong>3D House Project</strong> </h1>
 
-| ![](images/CHM_example.jpg) |
+| ![](images/CHM_example.png) |
 |:-:|
 | CHM = DSM - DTM |
 
