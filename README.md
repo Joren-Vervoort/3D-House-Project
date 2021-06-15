@@ -1,5 +1,9 @@
 <h1 align="center"> <strong>3D House Project</strong> </h1>
 
+| ![](Results/3D-house_example_1.png) |
+|:-:|
+| Result example |
+
 | ![](Images/CHM_example.png) |
 |:-:|
 | CHM = DSM - DTM |
