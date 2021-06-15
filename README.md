@@ -1,3 +1,5 @@
+Project status: currently updating
+
 <h1 align="center"> <strong>3D House Project</strong> </h1>
 
 | ![](Results/3D-house-example-1.png) |
