@@ -4,9 +4,6 @@
 |:-:|
 | Result example |
 
-| ![](Images/CHM_example.png) |
-|:-:|
-| CHM = DSM - DTM |
 
 - Repository: 3D-House-Project
 - Type of Challenge: Learning & Consolidation
@@ -82,9 +79,17 @@ and unpack ONLY the .tif file inside the GEOTiff folder to a created folder call
 
 This will be added.
 
+| ![](Images/CHM_example.png) |
+|:-:|
+| CHM = DSM - DTM |
+
 ## Results
 
-Examples of 3D plotted houses can be found in the folder called "Results"
+These are examples of results of adresses in Belgium (the precise location will not be shared out of privacy).
+
+| ![](Results/3D-house-example-1.png)  | ![](Results/3D-house-example-2.png)  |
+|:-:|:-:|
+| Result example 1 | Result example 2 | 
 
 ## Pending things to do
 
