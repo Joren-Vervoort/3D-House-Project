@@ -3,16 +3,6 @@
 import requests #Used to make website requests
 import json #Used to work with Json
 
-#class: LidarData
-
-import rasterio #Used for handling .tif files
-from rasterio.plot import show #Used to plot a .tif file
-import rioxarray #Used for handling rasters
-
-#class: Plotting
-
-import plotly.graph_objects as go #Used for 3D-Surface plot
-
 #In General
 
 import numpy as np
@@ -33,7 +23,6 @@ class AddressData:
         self.house_number = input("Please enter a house number: ")
         self.postal_code = input("Please enter a postal code: ")
         self.town = input("Please enter a town: ")
-        self.data_address = ""
 
     
     def coordinates(self):
@@ -56,16 +45,14 @@ class AddressData:
             data_address = json.loads(r_address.content)
 
             coordinates = data_address['adresMatches'][0]['adresPositie']['point']['coordinates']
-
-            self.data_address = data_address
-
-            return (coordinates, data_address)
         
+            return coordinates, data_address
+
         except:
             print("THIS ADDRESS DOES NOT EXIST OR THE ADDRESS IS NOT YET IN THE GOVERNMENT DATABASE")
-        
+            print("PLEASE RESTART THE MAIN.PY SCRIPT AND TRY AGAIN")
     
-    def polygon(self):
+    def polygon(self, data_address):
         
         """
         Function that will extract the polygon of a house using an API in coordinates (EPSG:31370) using and API
@@ -77,7 +64,7 @@ class AddressData:
         This function will return the coordinates (EPSG:3126) of the polygon shape of the house
         """
         
-        objectId_adresserbareObjecten = self.data_address['adresMatches'][0]['adresseerbareObjecten'][0]['objectId'] 
+        objectId_adresserbareObjecten = data_address['adresMatches'][0]['adresseerbareObjecten'][0]['objectId'] 
 
         r_gebouweenheden = requests.get("https://api.basisregisters.vlaanderen.be/v1/gebouweenheden/" + objectId_adresserbareObjecten)
         data_gebouweenheden = json.loads(r_gebouweenheden.content)

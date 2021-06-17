@@ -1,6 +1,15 @@
+import rasterio #Used for handling .tif files
+from rasterio.plot import show #Used to plot a .tif file
+import rioxarray #Used for handling rasters
+import os
+
 class LidarData:
+
+    def __init__(self, coordinates, file_zip_name):
+        self.coordinates = coordinates
+        self.file_tif_name = file_zip_name.replace(".zip",".tif")
     
-    def start_creating_chm():
+    def start_creating_chm(self):
         
         """
         Function that will start the creation of a canopy height model (CHM) of the house linked to the given adress
@@ -12,7 +21,7 @@ class LidarData:
         This function will return the CHM of a house linked to the given adress
         """
         
-        DSM_tif = LidarData.dsm_search(coordinates)
+        DSM_tif = LidarData.dsm_search(self.coordinates)
         DTM_tif = LidarData.dtm_search(DSM_tif)
 
         clipped_DSM, clip_boundaries = LidarData.dsm_clipping(DSM_tif)
@@ -21,7 +30,7 @@ class LidarData:
         
         return clipped_CHM
     
-    def dsm_search(coordinates):
+    def dsm_search(self):
         
         """
         Function that will search in which of the DSM (digital surface model) .tif the given address is located
@@ -30,31 +39,22 @@ class LidarData:
         :attrib bbox will contain the rasterio.bounds function
         This function will return the name of the DSM .tif file in which the given address is located
         """
-        directory = "E:/BeCode/3D-Housing-Project-data/DSM"
-
-        for filename in os.listdir(directory):
-            file = f"{directory}/{filename}"
-            dataset = rasterio.open(file,
-                                   masked=True)
-            bbox = dataset.bounds
-            if int(coordinates[0]) in range(int(bbox[0]),
-                                            int(bbox[2])):
-                DSM_tif = file
-                break
-            else:
-                continue
-                
+        
+        file = (os.getcwd()+f"\\data\\DSM\\GeoTIFF\\{self.file_tif_name}")
+        print("file:",file)
+        DSM_tif = rasterio.open(file, masked=True)
+          
         return (DSM_tif)
     
     
-    def dtm_search(DSM_tif):
+    def dtm_search(self, DSM_tif):
         
         """
         Function that will alter the name of the DSM .tif file name to the matching DTM .tif file name
         :attrib DTM_tif will contain the replace function
         This function will return the name of the DTM .tif file in which the given address is located
         """
-        
+        print (type(DSM_tif), DSM_tif)
         DTM_tif = DSM_tif.replace("DSM","DTM")
         
         return DTM_tif

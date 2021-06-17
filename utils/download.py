@@ -29,6 +29,7 @@ class DownloadFiles:
         # create dirs if not present
         for dir in self.files:
             print("Checking directories...")
+            dir = f"/data/{dir}"
             if os.path.exists(dir):
                 print("Directory is already satisfied")
             if not os.path.exists(dir):
@@ -62,42 +63,49 @@ class DownloadFiles:
         re-downloading
         """
 
-        for i in range(2):
+        for i in range(len(self.files)):
             
             folder_name = self.files[i]
-            print(folder_name)
             
             if folder_name == "DSM":
-                print("DSM")
                 url = f"https://downloadagiv.blob.core.windows.net/dhm-vlaanderen-ii-dsm-raster-1m/DHMVIIDSMRAS1m_{self.number}.zip"
             else:
-                print("DTM")
                 url = f"https://downloadagiv.blob.core.windows.net/dhm-vlaanderen-ii-dtm-raster-1m/DHMVIIDTMRAS1m_{self.number}.zip"
                     
             file_zip_name = url.split('/')[-1]
-            print(file_zip_name)
-            file_name = file_zip_name.rstrip('.zip')
-            print(file_name)
             for folder in self.files:
                 dir_name = (os.getcwd()+f"\\data\\{folder}")
-                for item in os.listdir(dir_name): # loop through items in dir
-                    if item == file_name: # check if file is already downloaded
-                        print("file is already downloaded")
-                    else:
-                        # Downloading the files
-                        print(f"downloading {folder} file... This may take a while")
-                        urllib.request.urlretrieve(url, f'./data/{folder_name}/{file_zip_name}')
+                number_of_files = len(os.listdir(dir_name))
+                if number_of_files == 0:
+                    # Downloading the files
+                    print(f"downloading {folder}.zip file... This may take a while")
+                    urllib.request.urlretrieve(url, f'./data/{folder_name}/{file_zip_name}')
+                else:
+                    i = 0
+                    for item in os.listdir(dir_name): # loop through items in dir
+                        if item == file_zip_name: # check if file is already downloaded
+                            print("file is already downloaded")
+                            break
+                        elif i != number_of_files:
+                            i += 1
+                            continue
+                        else:
+                            # Downloading the files
+                            print(f"downloading {folder}.zip file... This may take a while")
+                            urllib.request.urlretrieve(url, f'./data/{folder_name}/{file_zip_name}')
         print("All files have been downloaded")
+        
+        return file_zip_name
             
     
-    def unzip_and_delete(self):
+    def unzip(self):
 
         """
         Function that unzips the downloaded files and deletes the .zip files afterwards
         """
 
         for folder in self.files:
-            dir_name = (os.getcwd()+f"\\{folder}")
+            dir_name = (os.getcwd()+f"\\data\\{folder}")
             extension = ".zip"
 
             for item in os.listdir(dir_name): # loop through items in dir
@@ -106,5 +114,4 @@ class DownloadFiles:
                     zip_ref = zipfile.ZipFile(file_name) # create zipfile object
                     zip_ref.extractall(dir_name) # extract file to dir
                     zip_ref.close() # close file
-                    os.remove(file_name) # delete zipped file
 
